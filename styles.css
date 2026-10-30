@@ -36,4 +36,6 @@ html,body{background:#09080d;color:#f5f0fa}body{background:#09080d}.header{backg
   .sticky-apply-button {
     margin-left: 0;
   }
-}
+}/* Keep the full globe visible on mobile; desktop positioning remains unchanged */
+@media(max-width:650px){.hero-art{position:absolute;top:0;bottom:0;left:50%;right:auto;width:100vw;height:100%;padding:0;transform:translateX(-50%);display:flex;justify-content:center;align-items:flex-end;overflow:hidden}.globe-visual{position:absolute;left:50%;right:auto;bottom:-18px;width:min(112vw,460px);height:auto;max-width:none;transform:translateX(-50%);opacity:1}}
+@media(max-width:380px){.globe-visual{width:108vw;bottom:-12px}}
