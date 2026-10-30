@@ -38,4 +38,41 @@ html,body{background:#09080d;color:#f5f0fa}body{background:#09080d}.header{backg
   }
 }/* Keep the full globe visible on mobile; desktop positioning remains unchanged */
 @media(max-width:650px){.hero-art{position:absolute;top:0;bottom:0;left:50%;right:auto;width:100vw;height:100%;padding:0;transform:translateX(-50%);display:flex;justify-content:center;align-items:flex-end;overflow:hidden}.globe-visual{position:absolute;left:50%;right:auto;bottom:-18px;width:min(112vw,460px);height:auto;max-width:none;transform:translateX(-50%);opacity:1}}
-@media(max-width:380px){.globe-visual{width:108vw;bottom:-12px}}
+@media(max-width:380px){.globe-visual{width:108vw;bottom:-12px}}/* Explicit mobile-only centering: keep the whole globe inside the viewport */
+@media (max-width: 650px) {
+  .hero-art {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: auto !important;
+    height: 100% !important;
+    padding: 0 !important;
+    transform: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+    overflow: hidden !important;
+  }
+
+  .hero-art .globe-visual {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: -18px !important;
+    width: min(115vw, 460px) !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    margin: 0 !important;
+    transform: translateX(-50%) !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-art .globe-visual {
+    width: 112vw !important;
+    bottom: -12px !important;
+  }
+}
