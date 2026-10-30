@@ -76,3 +76,22 @@ html,body{background:#09080d;color:#f5f0fa}body{background:#09080d}.header{backg
     bottom: -12px !important;
   }
 }
+
+/* Language switch */
+.language-toggle {
+  flex: 0 0 auto;
+  min-width: 38px;
+  height: 36px;
+  margin-left: 10px;
+  padding: 0 9px;
+  border: 1px solid #8e3ee8;
+  border-radius: 3px;
+  background: #170f20;
+  color: #e8ccff;
+  font: 800 10px var(--sans);
+  letter-spacing: .06em;
+}
+.language-toggle:hover { background: #2a1738; }
+@media (max-width: 650px) {
+  .header .language-toggle { min-width: 32px; width: 32px; height: 32px; margin-left: 0; padding: 0 5px; font-size: 9px; }
+}
