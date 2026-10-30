@@ -95,3 +95,24 @@ html,body{background:#09080d;color:#f5f0fa}body{background:#09080d}.header{backg
 @media (max-width: 650px) {
   .header .language-toggle { min-width: 32px; width: 32px; height: 32px; margin-left: 0; padding: 0 5px; font-size: 9px; }
 }
+
+/* Larger, tightly cropped replacement logo for the dark header and footer */
+.header .brand-logo,
+.footer-brand .brand-logo {
+  display: block;
+  flex: 0 0 auto;
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid #e8ddf2;
+  border-radius: 6px;
+  box-shadow: 0 4px 24px #9a5be533;
+}
+@media (max-width: 650px) {
+  .header .brand { flex-basis: 70px; width: 70px; }
+  .header .brand-logo,
+  .footer-brand .brand-logo { width: 66px; height: 66px; }
+  .footer-brand { flex-basis: 70px; width: 70px; }
+}
