@@ -63,7 +63,7 @@ function setLanguage(language){
  const description=document.querySelector('meta[name="description"]');
  if(description)description.content=language==="sr"?serbianDescription:englishDescription;
  document.querySelectorAll("[data-language-toggle]").forEach(button=>{
-  button.textContent=language==="en"?"SR":"EN";
+  button.textContent=language==="en"?"🇷🇸 SR":"🇬🇧 EN";
   button.title=language==="en"?"Prevedi sajt na srpski":"Switch site to English";
   button.setAttribute("aria-label",language==="en"?"Prevedi sajt na srpski":"Switch language to English");
  });

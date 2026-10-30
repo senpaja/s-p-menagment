@@ -116,3 +116,84 @@ html,body{background:#09080d;color:#f5f0fa}body{background:#09080d}.header{backg
   .footer-brand .brand-logo { width: 66px; height: 66px; }
   .footer-brand { flex-basis: 70px; width: 70px; }
 }
+
+/* Crop the source logo image within a compact white tile so its mark reads clearly. */
+.header .brand,
+.footer-brand {
+  width: 70px;
+  height: 70px;
+  flex: 0 0 70px;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #e8ddf2;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 4px 24px #9a5be533;
+}
+.header .brand-logo,
+.footer-brand .brand-logo {
+  width: 100px;
+  height: 100px;
+  max-width: none;
+  flex: 0 0 100px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  object-fit: cover;
+  box-shadow: none;
+}
+.language-toggle {
+  min-width: 48px;
+  height: 38px;
+  padding: 0 9px;
+  border: 1px solid #dfaaff;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #a344f4, #7424ca);
+  color: #fff;
+  font-size: 11px;
+  box-shadow: 0 0 0 3px #9d4ce733, 0 5px 18px #9d4ce755;
+}
+.language-toggle:hover { background: linear-gradient(135deg, #bd70ff, #8b37e2); }
+@media (max-width: 650px) {
+  .header .brand,
+  .footer-brand { width: 66px; height: 66px; flex-basis: 66px; }
+  .header .brand-logo,
+  .footer-brand .brand-logo { width: 94px; height: 94px; flex-basis: 94px; }
+  .header .language-toggle { width: 45px; min-width: 45px; height: 36px; margin-left: 0; padding: 0 7px; font-size: 10px; }
+}
+
+/* First visit welcome animation */
+.welcome-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: radial-gradient(ellipse at 50% 42%, #241333, #09080d 68%);
+  color: #fbf7ff;
+  text-align: center;
+  animation: welcome-fade-out .65s ease 2.6s forwards;
+}
+.welcome-panel { animation: welcome-rise .8s cubic-bezier(.2,.8,.2,1) both; }
+.welcome-logo {
+  display: block;
+  width: 122px;
+  height: 122px;
+  margin: 0 auto 26px;
+  overflow: hidden;
+  border: 1px solid #eadcf5;
+  border-radius: 17px;
+  background: white;
+  box-shadow: 0 0 55px #a64cf566;
+}
+.welcome-logo img { width: 174px; height: 174px; max-width: none; margin: -26px; }
+.welcome-title { margin: 0; font: 800 clamp(30px, 7vw, 54px)/1.08 var(--display); letter-spacing: -.06em; }
+.welcome-title em { color: #c17aff; font-family: var(--serif); font-weight: 400; }
+.welcome-caption { margin: 15px 0 0; color: #c7b8d7; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; }
+.welcome-screen.is-leaving { animation: welcome-fade-out .5s ease forwards; }
+@keyframes welcome-rise { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes welcome-fade-out { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .welcome-screen, .welcome-panel { animation-duration: .01ms; animation-delay: 0ms; }
+}
