@@ -1,9 +1,4 @@
 (() => {
-  try {
-    if (localStorage.getItem('smile-welcome-seen')) return;
-    localStorage.setItem('smile-welcome-seen', '1');
-  } catch {}
-
   const screen = document.createElement('div');
   screen.className = 'welcome-screen';
   screen.setAttribute('role', 'status');
@@ -16,5 +11,5 @@
     window.setTimeout(() => screen.remove(), 550);
   };
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) dismiss();
-  else window.setTimeout(dismiss, 2850);
+  else window.setTimeout(dismiss, 2450);
 })();

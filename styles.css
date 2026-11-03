@@ -197,3 +197,27 @@ html,body{background:#09080d;color:#f5f0fa}body{background:#09080d}.header{backg
 @media (prefers-reduced-motion: reduce) {
   .welcome-screen, .welcome-panel { animation-duration: .01ms; animation-delay: 0ms; }
 }
+
+/* Make the Telegram action the clearest call to action after the welcome screen. */
+.sticky-apply-button,
+.header .button-small[href^="https://t.me/"],
+.apply-section .button[href^="https://t.me/"],
+.about-cta .button[href^="https://t.me/"] {
+  animation: telegram-button-pop .72s cubic-bezier(.18,.85,.3,1.25) 2.9s both,
+             telegram-button-glow 3.4s ease-in-out 3.8s infinite;
+}
+@keyframes telegram-button-pop {
+  0% { opacity: 0; transform: translateY(22px) scale(.78); }
+  72% { opacity: 1; transform: translateY(-4px) scale(1.07); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes telegram-button-glow {
+  0%, 100% { box-shadow: 0 5px 20px #9b42ef45; }
+  50% { box-shadow: 0 0 0 5px #bb76ff36, 0 8px 30px #b66aff99; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sticky-apply-button,
+  .header .button-small[href^="https://t.me/"],
+  .apply-section .button[href^="https://t.me/"],
+  .about-cta .button[href^="https://t.me/"] { animation: none; opacity: 1; transform: none; }
+}
