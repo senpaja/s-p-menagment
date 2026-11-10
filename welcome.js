@@ -3,7 +3,7 @@
   screen.className = 'welcome-screen';
   screen.setAttribute('role', 'status');
   screen.setAttribute('aria-live', 'polite');
-  screen.innerHTML = '<div class="welcome-panel"><span class="welcome-logo"><img src="assets/smile-logo-source.png" alt=""></span><h1 class="welcome-title">Welcome to<br><em>S&amp;P Managment</em></h1><p class="welcome-caption">People first · Conversations that count</p></div>';
+  screen.innerHTML = '<div class="welcome-panel"><span class="welcome-logo"><img src="assets/smile-logo-source.png" alt=""></span><h1 class="welcome-title">Welcome to<br><em>S&amp;P Management</em></h1><p class="welcome-caption">People first · Conversations that count</p></div>';
   document.body.append(screen);
 
   const dismiss = () => {
